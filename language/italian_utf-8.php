@@ -2,13 +2,13 @@
 
 /* Reminder: always indent with 4 spaces (no tabs). */
 // +---------------------------------------------------------------------------+
-// | Language Selection Block Plugin 1.0.0                                     |
+// | Language Selection Block Plugin                                           |
 // +---------------------------------------------------------------------------+
 // | italian_utf-8.php                                                         |
 // |                                                                           |
 // | Italian language file                                                     |
 // +---------------------------------------------------------------------------+
-// | Copyright (C) 2011 by the following authors:                              |
+// | Copyright (C) 2011-2018 by the following authors:                         |
 // |                                                                           |
 // | Authors: Rouslan Placella - rouslan AT placella DOT com                   |
 // +---------------------------------------------------------------------------+
@@ -38,8 +38,8 @@
 $LANG_LANGSEL_1 = array(
     'plugin_name' => 'Blocco di Selezione Lingue',
     'conf_link'   => 'Configurazione',
-	'title'       => 'Selezione Lingue',
-	'submit'      => 'Vai'
+    'title'       => 'Selezione Lingue',
+    'submit'      => 'Vai'
 );
 
 // Localization of the Admin Configuration UI
@@ -68,4 +68,3 @@ $LANG_fs['langsel'] = array(
 $LANG_configselects['langsel'] = array(
     1 => array('Con i blocchi sinistri' => 1, 'Con i blocchi destri' => 0)
 );
-?>

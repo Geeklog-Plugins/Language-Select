@@ -2,14 +2,14 @@
 
 /* Reminder: always indent with 4 spaces (no tabs). */
 // +---------------------------------------------------------------------------+
-// | Language Selection Block Plugin 1.0.0                                     |
+// | Language Selection Block Plugin                                           |
 // +---------------------------------------------------------------------------+
 // | functions.inc                                                             |
 // |                                                                           |
 // | This file does two things: 1) it implements the necessary Geeklog Plugin  |
 // | API methods and 2) implements all the common code needed by this plugin.  |
 // +---------------------------------------------------------------------------+
-// | Copyright (C) 2011 by the following authors:                              |
+// | Copyright (C) 2011-2018 by the following authors:                         |
 // |                                                                           |
 // | Authors: Rouslan Placella - rouslan AT placella DOT com                   |
 // +---------------------------------------------------------------------------+
@@ -36,7 +36,7 @@
 * @package LanguageSelectionBlock
 */
 
-if (strpos(strtolower($_SERVER['PHP_SELF']), 'functions.inc') !== false) {
+if (stripos($_SERVER['PHP_SELF'], 'functions.inc') !== false) {
     die ('This file can not be used on its own.');
 }
 
@@ -155,9 +155,11 @@ function plugin_cclabel_langsel()
 
     $retval = array();
     if (SEC_hasRights('langsel.admin')) {
-        $retval = array($LANG_LANGSEL_1['plugin_name'],
+        $retval = array(
+            $LANG_LANGSEL_1['plugin_name'],
             $_CONF['site_admin_url'] . '/plugins/langsel/index.php',
-            plugin_geticon_langsel());
+            plugin_geticon_langsel()
+        );
     }
 
     return $retval;
@@ -275,4 +277,28 @@ function plugin_autouninstall_langsel()
     return $out;
 }
 
-?>
+// For backward compatibility
+if (!is_callable('COM_createHTMLDocument')) {
+    function COM_createHTMLDocument(&$content = '', $information = array()) {
+        return COM_siteHeader() . $content . COM_siteFooter();
+    }
+}
+
+if (!is_callable('COM_output')) {
+    function COM_output($content) {
+        echo $content;
+    }
+}
+
+if (!is_callable('COM_redirect')) {
+    function COM_redirect($url) {
+        header('Location: ' . $url);
+        exit;
+    }
+}
+
+if (!is_callable('DB_escapeString')) {
+    function DB_escapeString($str) {
+        return addslashes($str);
+    }
+}
