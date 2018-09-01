@@ -36,10 +36,11 @@
 */
 
 $LANG_LANGSEL_1 = array(
-    'plugin_name' => 'Blocco di Selezione Lingue',
-    'conf_link'   => 'Configurazione',
-    'title'       => 'Selezione Lingue',
-    'submit'      => 'Vai'
+    'plugin_name'          => 'Blocco di Selezione Lingue',
+    'conf_link'            => 'Configurazione',
+    'title'                => 'Selezione Lingue',
+    'submit'               => 'Vai',
+    'autotag_desc_langsel' => 'L\'autotag di Langsel fornisce un selettore di lingua.',
 );
 
 // Localization of the Admin Configuration UI
@@ -66,5 +67,5 @@ $LANG_fs['langsel'] = array(
 );
 
 $LANG_configselects['langsel'] = array(
-    1 => array('Con i blocchi sinistri' => 1, 'Con i blocchi destri' => 0)
+    1 => array('Non come un blocco' => 2, 'Con i blocchi sinistri' => 1, 'Con i blocchi destri' => 0)
 );

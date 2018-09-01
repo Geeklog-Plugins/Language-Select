@@ -37,10 +37,11 @@
 */
 
 $LANG_LANGSEL_1 = array(
-    'plugin_name' => '言語選択ブロック',
-    'conf_link'   => '設定',
-    'title'       => '言語選択',
-    'submit'      => '実行'
+    'plugin_name'          => '言語選択ブロック',
+    'conf_link'            => '設定',
+    'title'                => '言語選択',
+    'submit'               => '実行',
+    'autotag_desc_langsel' => 'Langsel自動タグは言語セレクターを表示します。',
 );
 
 // Localization of the Admin Configuration UI
@@ -67,5 +68,5 @@ $LANG_fs['langsel'] = array(
 );
 
 $LANG_configselects['langsel'] = array(
-    1 => array('左ブロック' => 1, '右ブロック' => 0)
+    1 => array('ブロックなし' => 2, '左ブロック' => 1, '右ブロック' => 0)
 );
